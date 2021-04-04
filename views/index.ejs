@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <title>Colitas Express</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">     
+</head>
+<body>
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1>Colita's Cafe</h1>
+        <!-- <img src="img/smoothie.jpeg" alt="Coffee"> -->
+
+        <p>Login or Sign up to see Orders:</p>
+
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Log In</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Sign Up</a>
+
+    </div>
+
+</div>
+
+<section class="cashierContainer">
+
+
+   <div class=cCashierTitle">
+     <h2>Cashier: Input Order Below</h2>
+   </div>
+   <form class="cashierTitle"action="/messages" method="POST">
+     <input class="nameTwo" type="text" value="" placeholder="customer name" name="name">
+     <input class="orderTwo" type="text" placeholder="type of smoothie" name="order" >
+     <!-- <br>
+     <label for="espresso">Acai</label>
+     <input type="radio" placeholder="Espresso Shot" name="espresso">
+     <label for="caramel">Peach</label>
+     <input type="radio" placeholder="Caramel Pump" name="caramel">
+     <label for="sugar">Mango</label>
+     <input type="radio" placeholder="sugar" name="sugar">
+     <label for="cream">Blackberry</label>
+     <input type="radio" placeholder="Cream" name="cream">
+     <label for="milk">Passionfruit</label>
+     <input type="radio" placeholder="Milk" name="milk">
+     <br> -->
+     <select class="size" name="size">
+       <option  value="Small">Small</option>
+       <option value="Medium">Medium</option>
+       <option value="Large">Large</option>
+     </select>
+
+     <button type="submit">Submit</button>
+   </form>
+   </section>
+</body>
+</html>

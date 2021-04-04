@@ -1,0 +1,47 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-image: url("https://media.giphy.com/media/vxCqvjvJqjJHW/source.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+img{
+  height: 200px;
+}
+
+.cashierContainer{
+  margin-left: 37%;
+  color: white;
+}
+
+/* .size{
+  margin-left: 10%;
+} */
+
+button:hover{
+  background-color: aquamarine;
+}
+
+h1, h2, p{
+  /* font-family: 'Zilla Slab Highlight', cursive; */
+  font-family: 'Unica One', cursive;
+}
+
+.jumbotron.text-center{
+  color:#74A72A;
+}
+
+.container{
+  color: white;
+}
+
+.done{
+  text-decoration: line-through;
+}
+
+.col-sm-6{
+  border: 3px solid black;
+  background-color: whitesmoke;
+  color: black;
+}

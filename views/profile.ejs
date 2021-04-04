@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <title>Barista Express</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <!-- <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div> -->
+
+        <!-- THESE ARE INCOMING, INCOMPLETE ORDERS -->
+        <div class="col-sm-6">
+          <h3>Customer Orders</h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <% if(!messages[i].completed) { %>
+            <li class="message">
+              <span class="orderItem"><%= messages[i].name %></span>
+              <span class="orderItem"><%= messages[i].order %></span>
+              <span class="orderItem"><%= messages[i].size %></span>
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+            </li>
+          <% }} %>
+          </ul>
+</div>
+<!-- THESE ARE THE COMPLETED ORDERS -->
+<div class="col-sm-6">
+    <h3>Completed Orders</h3>
+    <ul class="messages">
+    <% for(var i=0; i<messages.length; i++) {%>
+      <% if(messages[i].completed) { %>
+      <li class="message">
+        <span class="orderItem done"><%= messages[i].name %></span>
+        <span class="orderItem done"><%= messages[i].order %></span>
+        <span class="orderItem done"><%= messages[i].size %></span>
+        <span class="orderItem done"><%= messages[i].barista %></span>
+        <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      </li>
+    <% }} %>
+    </ul>
+</div>
+<!-- THESE ARE YOUR/THE BARISTA'S COMPLETED ORDAHS -->
+
+<div class="col-sm-6">
+    <h3>Your Completed Orders</h3>
+    <ul class="messages">
+    <% for(var i=0; i<messages.length; i++) {%>
+      <% if(messages[i].barista == user.local.email) { %>
+      <li class="message">
+        <span class="orderItem done"><%= messages[i].name %></span>
+        <span class="orderItem done"><%= messages[i].order %></span>
+        <span class="orderItem done"><%= messages[i].size %></span>
+        <span class="orderItem done"><%= messages[i].barista %></span>
+        <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      </li>
+    <% }} %>
+    </ul>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
